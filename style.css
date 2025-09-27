@@ -1,0 +1,184 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body Styling ===== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f8f9fa;
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(45deg, #007bff, #00c3ff);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.header h1 {
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: yellow;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  padding: 50px 20px;
+  text-align: center;
+  background: #e3f2fd;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.hero p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* Button */
+.btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/*Flexbox Section */
+.flex-section {
+  padding: 40px 20px;
+  background: #f1f1f1;
+  text-align: center;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.flex-item {
+  background: #4caf50;
+  color: white;
+  padding: 30px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.flex-item:hover {
+  transform: translateY(-10px);
+}
+
+/*Grid Section*/
+.grid-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.grid-item {
+  background: #ff9800;
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Form Styling*/
+.form-section {
+  padding: 40px 20px;
+  background: #f1f1f1;
+}
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+form input, form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+form input:focus, form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/*Animation*/
+.animation-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.animated-box {
+  width: 100px;
+  height: 100px;
+  background: #e91e63;
+  margin : 10px auto;
+  position: relative;
+  right: 90px;
+  border-radius: 20px;
+  animation: bounce 2s infinite ease;
+}
+@keyframes bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(200px, 0);
+  }
+  50% {
+    transform: translate(200px, 200px);
+  }
+  75% {
+    transform: translate(0, 200px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Footer*/
+.footer {
+  background: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  top: 160px;
+}
