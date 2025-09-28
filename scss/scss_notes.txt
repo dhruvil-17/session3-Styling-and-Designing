@@ -1,0 +1,78 @@
+
+SCSS Notes
+==========
+
+SCSS (Sassy CSS) is a CSS preprocessor that adds powerful features to regular CSS,
+making it easier and more efficient to write styles. SCSS is a superset of CSS,
+so every valid CSS file is also a valid SCSS file.
+
+Features:-
+
+-Variables: Store reusable values like colors, fonts, padding, etc.
+  Example: $primary-color: #3498db;
+
+- Nesting: Nest CSS selectors inside each other for better readability.
+  Example:
+    .nav {
+      ul { margin: 0; }
+    }
+
+- Mixins: Reusable blocks of CSS that accept arguments(just like functions).
+  Example:
+    @mixin box($radius) {
+      border-radius: $radius;
+    }
+
+- Functions & Operations: Perform calculations and use built-in color functions.
+  Example: width: (100% / 3);
+
+- Partials & Imports: Split code into smaller files and import them.
+  Example: @import 'variables';
+
+- Inheritance (Extend): Share styles between selectors.
+  Example:
+    %button-style { padding: 10px; }
+    .btn { @extend %button-style; }
+
+- Modules (@use/@forward): Modern way to import and share code.
+
+
+
+3. Installation
+
+Prerequisite: Install Node.js and npm.
+
+a) Create a project folder and open terminal inside it.
+
+b) Initialize npm (optional):
+   npm init -y
+
+c) Install Sass (SCSS compiler) locally:
+   npm install sass
+
+or install globally:
+   npm install -g sass
+
+
+
+4. Running/Compiling SCSS
+
+If installed locally:
+   npx sass input.scss output.css
+
+If installed globally:
+   sass input.scss output.css
+
+To watch for changes automatically:
+   npx sass --watch input.scss output.css
+
+
+
+
+6. Common Rules
+---------------
+- Always start SCSS files with variables for easy theme control.
+- Use nesting carefully to avoid overly specific selectors.
+- Prefer @use and @forward over @import for modular code.
+- Use color.adjust or color.scale instead of deprecated lighten/darken.
+

@@ -1,0 +1,148 @@
+
+// VARIABLES
+
+$primary: #3498db;
+$secondary: #2ecc71;
+$padding: 20px;
+$radius: 8px;
+$font-stack: Arial, sans-serif;
+$colors: (red: #e74c3c, green: #2ecc71, blue: #3498db);
+
+
+// MIXINS
+
+@mixin card($bg: white) {
+  background: $bg;
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// FUNCTIONS (Custom example)
+
+@function rem($px) {
+  @return $px / 16 * 1rem;
+}
+
+
+// GLOBAL
+
+body {
+  font-family: $font-stack;
+  background: lighten($primary, 40%);
+  color: #333;
+  margin: 0;
+}
+
+
+// NESTING
+
+.header {
+  background: $primary;
+  padding: $padding;
+  text-align: center;
+
+  h1 { 
+    color: white; 
+    margin-bottom: 10px;
+    font-size: rem(24); // using custom function
+  }
+
+  .nav {
+    a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover { color: yellow; }
+    }
+  }
+}
+
+.content {
+  padding: $padding * 2; // Operator
+  display: flex;
+  justify-content: center;
+
+  .card {
+    @include card(); // Using mixin
+    max-width: 400px;
+    text-align: center;
+
+    h2 { color: $primary; margin-bottom: 10px; }
+    p { margin-bottom: 20px; }
+  }
+}
+
+.btn-primary {
+  background: $secondary;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: darken($secondary, 10%);
+  }
+}
+
+
+// EXTEND / INHERITANCE
+
+%card-base {
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-alt {
+  @extend %card-base;
+  background: $secondary;
+  color: white;
+  text-align: center;
+  margin-top: $padding;
+}
+
+
+// LOOPS
+// Generate colored buttons dynamically
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    background: $color;
+    color: white;
+    padding: 10px 20px;
+    border-radius: $radius;
+    margin: 5px;
+    display: inline-block;
+    &:hover { background: darken($color, 10%); }
+  }
+}
+
+
+// CONDITIONALS
+
+$dark-theme: false;
+
+body {
+  @if $dark-theme {
+    background: #404040;
+    
+  } @else {
+    background: #fff;
+    color: #333;
+  }
+}
+
+// so basically scss allows us to reuse the css code blocks by using variables(reusable style block) , mixins , functions(returns a value) , etc for a better code usability.
+// It also supports nesting to avoid rewriting the parent in selectors everytime we give style to child components
+//we also have loops and conditionals in scss which allows us conditional styling
