@@ -25,7 +25,7 @@ $colors: (red: #e74c3c, green: #2ecc71, blue: #3498db);
 }
 
 
-// FUNCTIONS (Custom example)
+// FUNCTIONS 
 
 @function rem($px) {
   @return $px / 16 * 1rem;

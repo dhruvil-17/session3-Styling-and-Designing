@@ -1,6 +1,4 @@
 
-SCSS Notes
-==========
 
 SCSS (Sassy CSS) is a CSS preprocessor that adds powerful features to regular CSS,
 making it easier and more efficient to write styles. SCSS is a superset of CSS,
